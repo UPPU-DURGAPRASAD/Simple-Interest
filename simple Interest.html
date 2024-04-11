@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: aqua;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: center;
+    color: aliceblue;
+        }
+        .container{
+            width: 350px;
+            height: 485px;
+            background-color:rgb(3, 24, 80);
+            margin-top: 3%;
+            margin-left: 38%;
+            padding:25px 15px;
+            border-radius: 10px;
+            
+        }
+        #head{
+            text-align: center;
+            font-size: 18px;
+            color: aqua;
+            font-family:serif;
+            margin-bottom: 30px;
+        }
+        
+        label{
+            text-align: left;
+            font-size: 20px;
+            color: white;
+            font-family:sans-serif;
+            margin-bottom: 15px;
+            display: block;
+        }
+        input{
+            width: 250px;
+            height: 38px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom:10px ;
+            font-size: 20px;
+            color: rgb(6, 4, 100);
+            font-family:cursive;
+            padding: 0 10px;
+
+        }
+        #calculate-btn{
+            width: 100px;
+            height: 40px;
+            background: aqua;
+            color: blue;
+            font-size: 20px;
+            font-family:sans-serif;
+            padding: 10px 10px;
+            border-radius: 10px;
+            border: none;
+             margin-left: 120px;
+            cursor: pointer;
+        }
+        .footer{
+            background-color:white;
+            margin-top: 25px;
+            padding: 5px 15px;
+            font-size: 18px;
+            font-family: cursive;
+             color: black;
+             border-radius: 15px;
+             
+        }
+        span{
+            
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        #output-1{
+            color: rgb(250, 3, 85);
+        }
+        #output-2{
+            color: rgb(20, 230, 0);
+        }
+        #output-3{
+            color: rgb(4, 40, 245);
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="head">
+            <h1>Find Simple Interest</h1>
+        </div>
+        <div class="content">
+            <div id="input">
+                <label>Principal (₹) :</label>
+                <input id="principal" type="number" placeholder="0.00"><br>
+                <label>Rate (%) :</label>
+                <input id="rate" type="number" placeholder="0"><br>
+                <label>Time (years) :</label>
+                <input id="time" type="number" placeholder="0"><br><br>
+            </div>
+        </div>
+        <div class="btn">
+            <button id="calculate-btn" onclick="calculate()"> Calculate</button>
+        </div>
+        <div class="footer">
+         <p>Principal Amount is (₹) : <span id="output-1" ></span></p>
+         <p>Total Interest is (₹) : <span id="output-2" ></span></p>
+         <p>Total Amount is (₹) : <span id="output-3" ></span></p>
+
+        </div>
+    </div>
+    
+    <script>
+         function calculate(){
+        var principal=parseInt(document.getElementById("principal").value);
+        var rate=parseInt(document.getElementById("rate").value);
+        var time=parseInt(document.getElementById("time").value);
+       var interest=principal*rate*time/100;
+       var amount= interest+principal;
+        
+       document.getElementById("output-1").innerHTML=parseInt(principal);
+       document.getElementById("output-2").innerHTML=parseInt(interest);
+       document.getElementById("output-3").innerHTML=parseInt(amount);
+
+      }
+    </script>
+     
+</body>
+</html>
